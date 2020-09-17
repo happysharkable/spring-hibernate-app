@@ -16,7 +16,7 @@ public class PrepareDataApp {
                 .buildSessionFactory();
         Session session = null;
         try {
-            String sql = Files.lines(Paths.get("full.sql")).collect(Collectors.joining(" "));
+            String sql = Files.lines(Paths.get("homework.sql")).collect(Collectors.joining(" "));
             session = factory.getCurrentSession();
             session.beginTransaction();
             session.createNativeQuery(sql).executeUpdate();
